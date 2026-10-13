@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>R&amp;M Helping Hands</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-36ab04fb-23da-46c5-8006-a606425f33c7/styles.css">
+<script src="_ds/industry-36ab04fb-23da-46c5-8006-a606425f33c7/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Poppins:wght@300;400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#fff}
+a{color:var(--color-accent-700)}
+a:hover{color:var(--color-accent-800)}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--color-bg:#ffffff;--font-heading:'Archivo Black',sans-serif;--font-body:'Poppins',sans-serif;min-height:100vh;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);background:var(--color-bg)">
+
+<header style="position:sticky;top:0;z-index:20;background:#04306b;color:#fff">
+  <nav style="max-width:1200px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:22px;flex-wrap:wrap">
+    <a href="#" onClick="{{ goHome }}" style="display:flex;align-items:center;gap:14px;margin-right:auto;text-decoration:none;color:#fff">
+      <span style="width:104px;height:104px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none"><img src="web/IMG_20261012_192304.jpeg" alt="R&amp;M Helping Hands Services logo" style="width:96px;height:96px;object-fit:contain"></span>
+      <span style="font-family:var(--font-body);font-weight:400;font-size:18px;line-height:1.25;max-width:190px">R &amp; M Helping Hands Services LLC</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-family:var(--font-body);font-size:15px">
+      <a href="#" onClick="{{ goHome }}" style="color:#fff;text-decoration:none;padding:4px 0;border-bottom:2px solid {{ navHome }}" style-hover="color:#fddf5f">Home</a>
+      <a href="#" onClick="{{ goWork }}" style="color:#fff;text-decoration:none;padding:4px 0;border-bottom:2px solid {{ navWork }}" style-hover="color:#fddf5f">Our work</a>
+      <a href="#" onClick="{{ goContact }}" style="color:#fff;text-decoration:none;padding:4px 0;border-bottom:2px solid {{ navContact }}" style-hover="color:#fddf5f">Contact us</a>
+      <a href="tel:+12292019888" style="color:#fddf5f;text-decoration:none;font-weight:500">229-201-9888</a>
+      <button onClick="{{ openSms }}" style="background:#fddf5f;color:#04306b;border:0;padding:10px 18px;font-family:var(--font-body);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.06em;cursor:pointer" style-hover="background:#fff">Text us</button>
+    </div>
+  </nav>
+</header>
+
+<main style="flex:1">
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="Home" style="background:#fff">
+    <div style="background:#04306b;color:#fff">
+      <div style="max-width:1200px;margin:0 auto;padding:56px 24px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <span style="font-family:var(--font-body);font-weight:300;letter-spacing:.4em;font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;color:#fddf5f">Professional</span>
+          <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(48px,7vw,92px);line-height:.92;margin:0;text-transform:uppercase;color:#fff">Yard &amp; Handyman Services</h1>
+          <p style="font-size:20px;margin:0;color:#fddf5f">Reliable, thorough, and affordable prices</p>
+          <p style="font-size:16px;line-height:1.6;max-width:500px;margin:0;color:#d5e1f3;text-wrap:pretty">We're a local crew that takes on yard work, land clearing and repairs, with one goal ahead of the rest: helping people who need it.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px">
+            <button onClick="{{ openSms }}" style="background:#fddf5f;color:#04306b;border:0;padding:14px 24px;font-family:var(--font-body);font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:.06em;cursor:pointer" style-hover="background:#fff">Text us about a job</button>
+            <a href="tel:+12292019888" style="border:2px solid #fff;color:#fff;padding:12px 22px;font-family:var(--font-body);font-weight:500;font-size:16px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none" style-hover="color:#fddf5f;border-color:#fddf5f">Call now</a>
+          </div>
+        </div>
+        <div style="position:relative;padding:28px 28px 0 0">
+          <div aria-hidden="true" style="position:absolute;top:0;right:0;display:grid;grid-template-columns:repeat(4,10px);gap:24px">
+            <sc-for list="{{ dots16 }}" as="d" hint-placeholder-count="16"><span style="width:10px;height:10px;border-radius:50%;background:#fff"></span></sc-for>
+          </div>
+          <figure class="{{ duo }}" style="position:relative;z-index:1;margin:0;aspect-ratio:4/5;max-height:560px;width:100%;box-shadow:-18px 18px 0 #fddf5f;border-radius:0 120px 0 0;overflow:hidden">
+            <img src="{{ heroSrc }}" alt="Recent job" style="width:100%;height:100%;object-fit:cover;display:block">
+          </figure>
+        </div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:clamp(60px,9vw,130px)"><path d="M0,0 H1440 V80 C1180,160 960,40 720,96 C470,150 230,150 0,96 Z" fill="#fddf5f"></path><path d="M0,0 H1440 V24 C1180,108 960,-6 720,52 C470,108 230,112 0,52 Z" fill="#04306b"></path></svg>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:88px 24px 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));border-top:1px solid var(--color-divider)">
+      <div style="padding:28px 28px 28px 0;display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700)">01 — Why we do it</span>
+        <h2 style="font-size:40px;margin:0;text-transform:uppercase;line-height:1">Making a difference comes first.</h2>
+      </div>
+      <div style="padding:28px 0;display:flex;flex-direction:column;gap:14px;font-size:17px;line-height:1.6;max-width:620px">
+        <p style="margin:0;text-wrap:pretty">A lot of the work we do starts with someone who couldn't get it done on their own: an older homeowner with an overgrown yard, a small church with worn-out steps, a family with a repair that's been waiting too long.</p>
+        <p style="margin:0;text-wrap:pretty">We show up, do the work right and treat every place like it belongs to someone we know. If money is tight, say so. We'll talk it through and see what we can do.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Services" style="margin-top:72px">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:clamp(40px,7vw,100px)"><path d="M0,120 V70 C260,10 560,0 820,50 C1060,96 1260,90 1440,40 V120 Z" fill="#04306b"></path></svg>
+    <div style="background:#04306b;color:#fff">
+      <div style="max-width:1200px;margin:0 auto;padding:24px 24px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:48px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:14px;position:sticky;top:150px">
+          <span style="font-weight:300;letter-spacing:.4em;font-size:15px;text-transform:uppercase;color:#fddf5f">What we do</span>
+          <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:.95;margin:0;text-transform:uppercase;color:#fff">Our services</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#d5e1f3;max-width:360px;text-wrap:pretty">Big job or small, if it's around the house or out in the yard, we can likely help. Tap a service to start a text about it.</p>
+          <div aria-hidden="true" style="display:flex;gap:12px;margin-top:8px">
+            <span style="width:26px;height:26px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box"></span>
+            <span style="width:26px;height:26px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box"></span>
+            <span style="width:26px;height:26px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box"></span>
+            <span style="width:26px;height:26px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box"></span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.18)">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+            <button onClick="{{ s.ask }}" style="all:unset;cursor:pointer;display:grid;grid-template-columns:64px minmax(0,1fr) 28px;gap:20px;align-items:center;padding:20px 16px;border-bottom:1px solid rgba(255,255,255,.18)" style-hover="background:#0a3a7a">
+              <span style="width:58px;height:58px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px;color:#fff">{{ s.n }}</span>
+              <span style="display:flex;flex-direction:column;gap:4px">
+                <span style="font-family:var(--font-heading);font-size:clamp(20px,2.4vw,26px);text-transform:uppercase;line-height:1.05;color:#fff">{{ s.title }}</span>
+                <span style="font-size:15px;line-height:1.5;color:#d5e1f3">{{ s.body }}</span>
+              </span>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fddf5f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:clamp(60px,9vw,130px)"><path d="M0,0 H1440 V96 C1210,150 970,150 720,96 C480,40 260,160 0,80 Z" fill="#fddf5f"></path><path d="M0,0 H1440 V52 C1210,112 970,108 720,52 C480,-6 260,108 0,24 Z" fill="#04306b"></path></svg>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:72px 24px 0">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:28px">
+      <div>
+        <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700)">03 — Recent jobs</span>
+        <h2 style="font-size:40px;margin:4px 0 0;text-transform:uppercase">Our work</h2>
+      </div>
+      <button class="btn btn-ghost" onClick="{{ goWork }}" style="font-size:16px;color:var(--color-accent-700);font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.06em">All jobs →</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:32px">
+      <sc-for list="{{ featured }}" as="p" hint-placeholder-count="3">
+        <button onClick="{{ p.open }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:12px">
+          <figure class="blueprint {{ duo }}" style="aspect-ratio:4/5;width:100%">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <img src="{{ p.cover }}" alt="{{ p.title }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ p.coverPos }}">
+          </figure>
+          <div style="display:flex;justify-content:space-between;gap:8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span>{{ p.catLabel }}</span><span>{{ p.date }}</span></div>
+          <h3 style="font-size:24px;margin:0;text-transform:uppercase;line-height:1.05">{{ p.title }}</h3>
+          <span style="font-size:14px;color:var(--color-neutral-700)">{{ p.photoCount }} photos</span>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:88px 24px 88px">
+    <div class="blueprint" style="padding:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="max-width:560px">
+        <h2 style="font-size:40px;margin:0 0 8px;text-transform:uppercase">Got a job in mind?</h2>
+        <p style="margin:0;font-size:17px;color:var(--color-neutral-800)">Send a text from right here. Describe the job, add your number, and we'll text you back.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-primary" onClick="{{ openSms }}" style="font-size:17px;padding:12px 22px;background:#fddf5f;color:#04306b;border:2px solid #fddf5f;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.06em" style-hover="background:#fff;color:#04306b;border-color:#04306b">Start a text</button>
+        <button class="btn btn-secondary" onClick="{{ goContact }}" style="font-size:17px;padding:12px 22px;border:2px solid #04306b;color:#04306b;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.06em" style-hover="background:#04306b;color:#fff">Contact page</button>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ isWork }}" hint-placeholder-val="{{ false }}">
+  <div style="background:#04306b;color:#fff">
+    <div style="max-width:1200px;margin:0 auto;padding:48px 24px 16px;display:flex;flex-direction:column;gap:10px">
+      <span style="font-family:var(--font-body);font-weight:300;letter-spacing:.4em;font-size:15px;text-transform:uppercase;color:#fddf5f">Job log</span>
+      <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);margin:0;text-transform:uppercase;line-height:.95;color:#fff">Our work</h1>
+      <p style="font-size:17px;max-width:640px;margin:0;color:#fddf5f;text-wrap:pretty">A few of the jobs we've finished. Tap any one to see every photo.</p>
+    </div>
+  </div>
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:clamp(60px,9vw,130px)"><path d="M0,0 H1440 V80 C1180,160 960,40 720,96 C470,150 230,150 0,96 Z" fill="#fddf5f"></path><path d="M0,0 H1440 V24 C1180,108 960,-6 720,52 C470,108 230,112 0,52 Z" fill="#04306b"></path></svg>
+  <section data-screen-label="Our work" style="max-width:1200px;margin:0 auto;padding:24px 24px 88px">
+    <div class="seg" style="margin-bottom:32px;flex-wrap:wrap">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+        <label class="seg-opt" style="font-size:15px;padding:9px 16px"><input type="radio" name="jobfilter" checked="{{ f.checked }}" onChange="{{ f.pick }}">{{ f.label }}</label>
+      </sc-for>
+    </div>
+    <div style="border-top:1px solid var(--color-divider)">
+      <sc-for list="{{ filtered }}" as="p" hint-placeholder-count="4">
+        <button onClick="{{ p.open }}" style="all:unset;cursor:pointer;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;padding:28px 0;border-bottom:1px solid var(--color-divider);width:100%;box-sizing:border-box">
+          <div style="display:flex;flex-direction:column;gap:10px;justify-content:center">
+            <div style="display:flex;gap:16px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span>{{ p.num }}</span><span>{{ p.catLabel }}</span><span>{{ p.date }}</span></div>
+            <h3 style="font-size:30px;margin:0;text-transform:uppercase;line-height:1">{{ p.title }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.55;color:var(--color-neutral-800);max-width:440px;text-wrap:pretty">{{ p.summary }}</p>
+            <span style="font-family:var(--font-body);font-weight:600;font-size:15px;color:var(--color-accent-700)">View {{ p.photoCount }} photos →</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+            <sc-for list="{{ p.thumbs }}" as="t" hint-placeholder-count="3">
+              <figure class="blueprint {{ duo }}" style="aspect-ratio:4/5;width:100%">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                <img src="{{ t.src }}" alt="{{ t.label }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ t.pos }}">
+                <span style="position:absolute;left:0;bottom:0;z-index:2;background:var(--color-bg);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px">{{ t.label }}</span>
+              </figure>
+            </sc-for>
+          </div>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <div style="background:#04306b;color:#fff">
+    <div style="max-width:1200px;margin:0 auto;padding:48px 24px 16px;display:flex;flex-direction:column;gap:10px">
+      <span style="font-family:var(--font-body);font-weight:300;letter-spacing:.4em;font-size:15px;text-transform:uppercase;color:#fddf5f">Get in touch</span>
+      <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);margin:0;text-transform:uppercase;line-height:.95;color:#fff">Contact us</h1>
+      <p style="font-size:17px;max-width:640px;margin:0;color:#fddf5f;text-wrap:pretty">Richard &amp; Marquita Rogers run every job themselves. Text is the fastest way to reach us. You can also call, stop by or fill out the form and we'll get back to you.</p>
+    </div>
+  </div>
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:clamp(60px,9vw,130px)"><path d="M0,0 H1440 V80 C1180,160 960,40 720,96 C470,150 230,150 0,96 Z" fill="#fddf5f"></path><path d="M0,0 H1440 V24 C1180,108 960,-6 720,52 C470,108 230,112 0,52 Z" fill="#04306b"></path></svg>
+  <section data-screen-label="Contact us" style="max-width:1200px;margin:0 auto;padding:24px 24px 88px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px;align-items:start">
+      <div class="blueprint" style="display:flex;flex-direction:column;height:560px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="padding:16px 18px;border-bottom:1px solid var(--color-divider);display:flex;align-items:center;gap:12px">
+          <img src="web/IMG_20261012_192304.jpeg" alt="" style="width:38px;height:38px;object-fit:contain;mix-blend-mode:multiply">
+          <div style="display:flex;flex-direction:column;line-height:1.2;flex:1">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600">Text R&amp;M Helping Hands</span>
+            <span style="font-size:13px;color:var(--color-neutral-700)">(229) 201-9888 · replies by text</span>
+          </div>
+        </div>
+        <div ref="{{ threadRefA }}" style="flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="1">
+            <div style="max-width:82%;align-self:{{ m.align }};background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.border }};padding:9px 13px;font-size:15px;line-height:1.45;white-space:pre-wrap">{{ m.text }}</div>
+          </sc-for>
+          <sc-if value="{{ typing }}" hint-placeholder-val="{{ false }}">
+            <div style="align-self:flex-start;border:1px solid var(--color-divider);padding:9px 13px;display:flex;gap:4px">{{ dots }}</div>
+          </sc-if>
+        </div>
+        <div style="padding:12px;border-top:1px solid var(--color-divider);display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;gap:8px">
+            <input class="input" value="{{ draft }}" onChange="{{ setDraft }}" onKeyDown="{{ draftKey }}" placeholder="{{ placeholder }}" style="font-size:15px;min-height:42px">
+            <button class="btn btn-primary" onClick="{{ send }}" aria-label="Send" style="min-width:48px;min-height:42px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+            </button>
+          </div>
+          <a href="{{ smsHref }}" style="font-size:13px">Or open in your phone's Messages app</a>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:32px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));border-top:1px solid var(--color-divider);border-left:1px solid var(--color-divider)">
+          <a href="tel:+12292019888" style="padding:18px;border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);text-decoration:none;color:var(--color-text);display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">Call</span>
+            <span style="font-family:var(--font-body);font-weight:500;font-size:17px">(229) 201-9888</span>
+          </a>
+          <a href="https://maps.google.com/?q=723+S+Lewis+Blvd+Tallahassee+FL+32305" style="padding:18px;border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);text-decoration:none;color:var(--color-text);display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">Visit</span>
+            <span style="font-family:var(--font-body);font-weight:500;font-size:17px">723 S Lewis Blvd.<br>Tallahassee, FL 32305</span>
+          </a>
+          <div style="padding:18px;border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">Hours</span>
+            <span style="font-family:var(--font-body);font-weight:500;font-size:17px">Mon–Sat, 7am–6pm</span>
+          </div>
+        </div>
+
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submitForm }}" style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="font-size:28px;margin:0;text-transform:uppercase">Request an estimate</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <div class="field"><label>Name</label><input class="input" required style="min-height:44px"></div>
+              <div class="field"><label>Phone</label><input class="input" type="tel" required style="min-height:44px"></div>
+            </div>
+            <div class="field"><label>Address of the job</label><input class="input" type="email" style="min-height:44px"></div>
+            <div class="field"><label>What kind of job?</label>
+              <select class="input" style="min-height:44px">
+                <option>Yard service</option><option>Hedge trimming</option><option>Leaves &amp; debris cleanup</option><option>Land clearing</option><option>Painting</option><option>Flooring</option><option>Tile &amp; bath</option><option>Drywall &amp; repairs</option><option>Something else</option>
+              </select>
+            </div>
+            <div class="field"><label>Tell us about it</label><textarea class="input" placeholder="Where is it, what needs doing, and anything about your situation you'd like us to know."></textarea></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;color:var(--color-neutral-700)">Best way to reach you</span>
+              <div style="display:flex;gap:20px;flex-wrap:wrap">
+                <label class="radio"><input type="radio" name="pref" defaultChecked="{{ true }}"><span class="dot"></span>Text</label>
+                <label class="radio"><input type="radio" name="pref"><span class="dot"></span>Call</label>
+                
+              </div>
+            </div>
+            <div><button type="submit" class="btn btn-primary" style="font-size:17px;padding:12px 22px;background:#fddf5f;color:#04306b;border:2px solid #fddf5f;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.06em" style-hover="background:#fff;color:#04306b;border-color:#04306b">Send request</button></div>
+          </form>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div class="blueprint" style="padding:28px;display:flex;flex-direction:column;gap:8px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <h2 style="font-size:28px;margin:0;text-transform:uppercase">Thanks, we got it.</h2>
+            <p style="margin:0;font-size:16px;color:var(--color-neutral-800)">We'll reach out within one business day.</p>
+            <div><button class="btn btn-ghost" onClick="{{ resetForm }}" style="color:var(--color-accent-700);font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.06em">Send another</button></div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+</sc-if>
+</main>
+
+<footer>
+  <svg viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:clamp(50px,8vw,110px)"><path d="M0,140 V50 C240,130 520,140 760,70 C900,28 960,0 1080,10 C1200,20 1300,60 1440,40 V140 Z" fill="#04306b"></path></svg>
+  <div style="background:#04306b;color:#fff">
+    <div style="max-width:1200px;margin:0 auto;padding:12px 24px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:15px">
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="width:84px;height:84px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none"><img src="web/IMG_20261012_192304.jpeg" alt="R&amp;M Helping Hands Services logo" style="width:76px;height:76px;object-fit:contain"></span>
+        <div style="display:flex;flex-direction:column;gap:2px;line-height:1.4">
+          <span style="font-weight:500">Richard &amp; Marquita Rogers</span>
+          <a href="tel:+12292019888" style="color:#fddf5f;text-decoration:none">229-201-9888</a>
+          <span>723 S Lewis Blvd., Tallahassee, FL 32305</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:14px">
+        <div aria-hidden="true" style="display:flex;gap:14px">
+          <span style="width:30px;height:30px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box"></span>
+          <span style="width:30px;height:30px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box"></span>
+          <span style="width:30px;height:30px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box"></span>
+          <span style="width:30px;height:30px;border-radius:50%;border:5px solid #fddf5f;box-sizing:border-box"></span>
+        </div>
+        <span style="font-size:13px;color:#d5e1f3">© 2026 R&amp;M Helping Hands Services LLC</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ showFab }}" hint-placeholder-val="{{ false }}">
+  <button class="btn btn-primary" onClick="{{ openSms }}" style="position:fixed;right:24px;bottom:24px;z-index:30;font-size:16px;padding:12px 18px;box-shadow:var(--shadow-md);gap:8px;background:#fddf5f;color:#04306b;border:2px solid #fddf5f;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.06em" style-hover="background:#fff;color:#04306b;border-color:#04306b">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    Text us
+  </button>
+</sc-if>
+
+<sc-if value="{{ showPanel }}" hint-placeholder-val="{{ false }}">
+  <div class="blueprint" style="position:fixed;right:24px;bottom:24px;z-index:40;width:min(380px,calc(100vw - 48px));height:min(540px,calc(100vh - 120px));background:var(--color-bg);box-shadow:var(--shadow-lg);display:flex;flex-direction:column">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="padding:14px 16px;border-bottom:1px solid var(--color-divider);display:flex;align-items:center;gap:10px">
+      <img src="web/IMG_20261012_192304.jpeg" alt="" style="width:34px;height:34px;object-fit:contain;mix-blend-mode:multiply">
+      <div style="display:flex;flex-direction:column;line-height:1.2;flex:1">
+        <span style="font-family:var(--font-body);font-size:15px;font-weight:600">Text R&amp;M Helping Hands</span>
+        <span style="font-size:12px;color:var(--color-neutral-700)">(229) 201-9888 · replies by text</span>
+      </div>
+      <button class="btn btn-icon btn-secondary" onClick="{{ closeSms }}" aria-label="Close" style="width:40px;height:40px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div ref="{{ threadRefB }}" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="1">
+        <div style="max-width:82%;align-self:{{ m.align }};background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.border }};padding:9px 13px;font-size:15px;line-height:1.45;white-space:pre-wrap">{{ m.text }}</div>
+      </sc-for>
+      <sc-if value="{{ typing }}" hint-placeholder-val="{{ false }}">
+        <div style="align-self:flex-start;border:1px solid var(--color-divider);padding:9px 13px;display:flex;gap:4px">{{ dots }}</div>
+      </sc-if>
+    </div>
+    <div style="padding:12px;border-top:1px solid var(--color-divider);display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:8px">
+        <input class="input" value="{{ draft }}" onChange="{{ setDraft }}" onKeyDown="{{ draftKey }}" placeholder="{{ placeholder }}" style="font-size:15px;min-height:42px">
+        <button class="btn btn-primary" onClick="{{ send }}" aria-label="Send" style="min-width:48px;min-height:42px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+        </button>
+      </div>
+      <a href="{{ smsHref }}" style="font-size:13px">Or open in your phone's Messages app</a>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}">
+  <div class="dialog-backdrop" onClick="{{ closeJob }}" style="z-index:50;overflow-y:auto;align-items:start;padding:40px 16px">
+    <div class="dialog" onClick="{{ stop }}" style="width:min(1040px,100%);background:var(--color-bg);padding:28px;gap:20px;position:relative">
+      <div style="display:flex;justify-content:space-between;gap:16px;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;gap:16px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span>{{ active.catLabel }}</span><span>{{ active.date }}</span></div>
+          <h2 style="font-size:36px;margin:0;text-transform:uppercase;line-height:1">{{ active.title }}</h2>
+          <p style="margin:0;font-size:16px;max-width:620px;color:var(--color-neutral-800)">{{ active.summary }}</p>
+        </div>
+        <button class="btn btn-icon btn-secondary" onClick="{{ closeJob }}" aria-label="Close" style="width:44px;height:44px;flex:none">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:20px">
+        <sc-for list="{{ active.photos }}" as="t" hint-placeholder-count="3">
+          <figure class="blueprint {{ duo }}" style="aspect-ratio:3/4;width:100%">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <img src="{{ t.src }}" alt="{{ t.label }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ t.pos }}">
+            <span style="position:absolute;left:0;bottom:0;z-index:2;background:var(--color-bg);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px">{{ t.label }}</span>
+          </figure>
+        </sc-for>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--color-divider);padding-top:18px">
+        <span style="font-size:15px;color:var(--color-neutral-800)">Need something similar done?</span>
+        <button class="btn btn-primary" onClick="{{ askAboutJob }}" style="font-size:16px;padding:10px 18px;background:#fddf5f;color:#04306b;border:2px solid #fddf5f;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.06em" style-hover="background:#fff;color:#04306b;border-color:#04306b">Text us about it</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;colorScheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Brochure navy&quot;,&quot;Industry steel&quot;],&quot;default&quot;:&quot;Brochure navy&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;photoTreatment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Duotone&quot;,&quot;Natural color&quot;],&quot;default&quot;:&quot;Natural color&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;heroPhoto&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Church steps&quot;,&quot;Land clearing&quot;,&quot;Sanctuary floor&quot;],&quot;default&quot;:&quot;Church steps&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showTextButton&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const U = 'web/';
+const PHONE = '+12292019888';
+const CATS = { land: 'Lawn & land', repair: 'Repairs & remodel', paint: 'Painting' };
+const P = (f, label, pos) => ({ src: U + f + '.jpeg', label, pos: pos || '50% 50%' });
+const JOBS = [
+  { id: 'steps', title: 'Church entrance steps & handrails', cat: 'repair', date: 'Aug 2026',
+    summary: 'Repaired and repainted the block entry steps of a local church and installed new handrails on both sides so members can come and go safely.',
+    photos: [P('IMG_20260816_134316456_HDR', 'After'), P('IMG_20260816_134326062_HDR', 'Before'), P('IMG_20260816_134335047_HDR', 'After')] },
+  { id: 'land', title: 'Land clearing & trail mowing', cat: 'land', date: 'May 2026',
+    summary: 'Cut back brush and overgrowth across a wooded lot and opened wide mowed paths through the pines and oaks.',
+    photos: [P('IMG_20260523_113241945_HDR', 'After'), P('IMG_20260523_114635741_HDR', 'Before'), P('IMG_20260523_121339199_HDR', 'After'), P('IMG_20260523_121401388_HDR', 'Before'), P('IMG_20260523_125500284_HDR', 'After')] },
+  { id: 'floor', title: 'Sanctuary floor refinish', cat: 'repair', date: 'Aug 2025',
+    summary: 'Sanded the church\u2019s original pine floor back to bare wood, then stained and sealed it on both sides of the center aisle.',
+    photos: [P('IMG_20250808_120633956_HDR', 'Finished'), P('IMG_20250807_155345897_HDR', 'Sanded'), P('IMG_20250806_092249996_HDR', 'Finished')] },
+  { id: 'shower', title: 'Walk-in shower tile', cat: 'repair', date: 'Sep 2025',
+    summary: 'Wood-look plank tile walls with a river-stone floor and curb, set around a new window.',
+    photos: [P('IMG_20250924_105232658_HDR', 'Grouted'), P('IMG_20250922_144142912_HDR', 'In progress')] },
+  { id: 'closets', title: 'Closet framing & drywall', cat: 'repair', date: 'Jan 2026',
+    summary: 'Framed two new closets, hung drywall, and taped and mudded the seams ready for paint.',
+    photos: [P('IMG_20260126_130229648_HDR', 'In progress'), P('IMG_20260126_130237076_HDR', 'Detail')] },
+  { id: 'bathwalls', title: 'Bathroom wall repair & texture', cat: 'repair', date: 'Feb 2026',
+    summary: 'Patched damaged wallboard and matched the existing texture so the room is ready for paint.',
+    photos: [P('IMG_20260224_121740515_HDR', 'Textured'), P('IMG_20260224_121734539_HDR', 'In progress')] },
+  { id: 'door', title: 'Front door refinish', cat: 'paint', date: 'Dec 2022',
+    summary: 'Primed and repainted a worn entry door in deep teal, keeping the leaded glass protected throughout.',
+    photos: [P('20221202_155330', 'After'), P('20221202_132639', 'Primed')] },
+  { id: 'walk', title: 'Walkway & patio coating', cat: 'paint', date: 'Oct 2022',
+    summary: 'Cleaned and coated the front walkway and stamped patio in fresh, bright colors.',
+    photos: [P('Screenshot_20221015-222137_Gallery', 'After', '50% 48%')] },
+];
+const SERVICES = [
+  ['Yard service', 'Mowing, edging, hedge trimming and leaf cleanup.'],
+  ['Debris & land clearing', 'Debris haul-off, brush, overgrowth and trail cutting.'],
+  ['Painting', 'Doors, trim, steps, walkways and patios, inside and out.'],
+  ['Flooring', 'Sanding, staining and sealing old wood floors.'],
+  ['Tile & bath', 'Showers, tile walls and bathroom updates.'],
+  ['Drywall & repairs', 'Framing, patching, texture and the odd jobs in between.'],
+];
+const HERO = { 'Church steps': 'IMG_20260816_134316456_HDR', 'Land clearing': 'IMG_20260523_113241945_HDR', 'Sanctuary floor': 'IMG_20250808_120633956_HDR' };
+
+class Component extends DCLogic {
+  state = {
+    page: 'home', filter: 'all', activeId: null, smsOpen: false, sent: false,
+    draft: '', typing: false, step: 'msg', phone: '',
+    msgs: [{ from: 'them', text: 'Hi! This is R&M Helping Hands. What can we help you with?' }],
+  };
+  rootRef = React.createRef();
+  applyScheme() {
+    const el = this.rootRef.current; if (!el) return;
+    const navy = (this.props.colorScheme ?? 'Brochure navy') === 'Brochure navy';
+    const v = navy ? { '': '#0a3a7a', 100: '#eef3fb', 200: '#d5e1f3', 300: '#b0c6e8', 400: '#7f9fd2', 500: '#3f68a8', 600: '#0a3a7a', 700: '#04306b', 800: '#032553', 900: '#021a3d' } : null;
+    ['', 100, 200, 300, 400, 500, 600, 700, 800, 900].forEach(k => {
+      const n = '--color-accent' + (k === '' ? '' : '-' + k);
+      v ? el.style.setProperty(n, v[k]) : el.style.removeProperty(n);
+    });
+  }
+  componentDidMount() { this.applyScheme(); }
+  threadA = React.createRef();
+  threadB = React.createRef();
+  componentDidUpdate() {
+    this.applyScheme();
+    [this.threadA, this.threadB].forEach(r => { if (r.current) r.current.scrollTop = r.current.scrollHeight; });
+  }
+  componentWillUnmount() { clearTimeout(this.t); }
+  go(page) { return e => { e && e.preventDefault(); this.setState({ page, smsOpen: false }); window.scrollTo(0, 0); }; }
+  reply(text) {
+    this.setState({ typing: true });
+    clearTimeout(this.t);
+    this.t = setTimeout(() => this.setState(s => ({ typing: false, msgs: [...s.msgs, { from: 'them', text }] })), 1200);
+  }
+  send = () => {
+    const text = this.state.draft.trim();
+    if (!text) return;
+    const msgs = [...this.state.msgs, { from: 'me', text }];
+    if (this.state.step === 'msg') {
+      this.setState({ msgs, draft: '', step: 'phone' });
+      this.reply('Thanks for reaching out. What\u2019s the best number to text you back at?');
+    } else if (this.state.step === 'phone') {
+      this.setState({ msgs, draft: '', step: 'done', phone: text });
+      this.reply(`Got it. We\u2019ll text you at ${text} shortly, usually within a few hours. Feel free to send photos of the job when we reply.`);
+    } else {
+      this.setState({ msgs, draft: '' });
+      this.reply('Thanks, we\u2019ve added that to your conversation.');
+    }
+  };
+  renderVals() {
+    const s = this.state, pr = this.props;
+    const duo = (pr.photoTreatment ?? 'Natural color') === 'Duotone' ? 'duotone' : '';
+    const enrich = (j, i) => ({
+      ...j, num: String(i + 1).padStart(2, '0'), catLabel: CATS[j.cat], cover: j.photos[0].src, coverPos: j.photos[0].pos,
+      photoCount: j.photos.length, thumbs: j.photos.slice(0, 3),
+      open: () => this.setState({ activeId: j.id }),
+    });
+    const all = JOBS.map(enrich);
+    const active = all.find(j => j.id === s.activeId) || null;
+    const lastMine = [...s.msgs].reverse().find(m => m.from === 'me');
+    const body = s.draft || (s.step !== 'msg' && s.msgs[1] ? s.msgs[1].text : '');
+    const dot = d => React.createElement('span', { key: d, style: { width: 6, height: 6, borderRadius: 3, background: 'var(--color-neutral-600)', animation: `blink 1.2s ${d * 0.2}s infinite` } });
+    return {
+      isHome: s.page === 'home', isWork: s.page === 'work', isContact: s.page === 'contact',
+      curHome: s.page === 'home' ? 'page' : undefined, curWork: s.page === 'work' ? 'page' : undefined, curContact: s.page === 'contact' ? 'page' : undefined,
+      navHome: s.page === 'home' ? '#fddf5f' : 'transparent', navWork: s.page === 'work' ? '#fddf5f' : 'transparent', navContact: s.page === 'contact' ? '#fddf5f' : 'transparent',
+      dots16: Array.from({ length: 16 }, (_, i) => i),
+      goHome: this.go('home'), goWork: this.go('work'), goContact: this.go('contact'),
+      duo,
+      heroSrc: U + HERO[pr.heroPhoto ?? 'Church steps'] + '.jpeg',
+      services: SERVICES.map(([title, b], i) => ({ n: String(i + 1).padStart(2, '0'), title, body: b, ask: () => this.setState({ smsOpen: true, draft: `Hi, I'd like to ask about ${title.toLowerCase()}.` }) })),
+      featured: all.filter(j => ['steps', 'land', 'floor'].includes(j.id)),
+      filters: [['all', 'All jobs'], ['land', CATS.land], ['repair', CATS.repair], ['paint', CATS.paint]].map(([k, label]) => ({
+        label, checked: s.filter === k, pick: () => this.setState({ filter: k }),
+      })),
+      filtered: all.filter(j => s.filter === 'all' || j.cat === s.filter),
+      hasActive: !!active, active: active || {},
+      closeJob: () => this.setState({ activeId: null }),
+      stop: e => e.stopPropagation(),
+      askAboutJob: () => this.setState({ activeId: null, smsOpen: s.page !== 'contact', draft: active ? `Hi, I saw your ${active.title.toLowerCase()} job and need something similar.` : '' }),
+      msgs: s.msgs.map(m => m.from === 'me'
+        ? { ...m, align: 'flex-end', bg: 'var(--color-accent)', fg: 'var(--color-bg)', border: 'var(--color-accent)' }
+        : { ...m, align: 'flex-start', bg: 'transparent', fg: 'var(--color-text)', border: 'var(--color-divider)' }),
+      typing: s.typing, dots: [0, 1, 2].map(dot),
+      draft: s.draft,
+      setDraft: e => this.setState({ draft: e.target.value }),
+      draftKey: e => { if (e.key === 'Enter') { e.preventDefault(); this.send(); } },
+      send: this.send,
+      placeholder: s.step === 'phone' ? 'Your phone number' : 'Type a message',
+      smsHref: `sms:${PHONE}?&body=${encodeURIComponent(body)}`,
+      rootRef: this.rootRef, threadRefA: this.threadA, threadRefB: this.threadB,
+      openSms: () => s.page === 'contact' ? null : this.setState({ smsOpen: true }),
+      closeSms: () => this.setState({ smsOpen: false }),
+      showPanel: s.smsOpen && s.page !== 'contact',
+      showFab: (pr.showTextButton ?? true) && !s.smsOpen && s.page !== 'contact',
+      notSent: !s.sent, sent: s.sent,
+      submitForm: e => { e.preventDefault(); this.setState({ sent: true }); },
+      resetForm: () => this.setState({ sent: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>
