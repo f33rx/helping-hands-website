@@ -75,7 +75,7 @@ a:hover{color:var(--color-accent-800)}
       </div>
       <div style="padding:28px 0;display:flex;flex-direction:column;gap:14px;font-size:17px;line-height:1.6;max-width:620px">
         <p style="margin:0;text-wrap:pretty">A lot of the work we do starts with someone who couldn't get it done on their own: an older homeowner with an overgrown yard, a small church with worn-out steps, a family with a repair that's been waiting too long.</p>
-        <p style="margin:0;text-wrap:pretty">We show up, do the work right and treat every place like it belongs to someone we know. If money is tight, say so. We'll talk it through and see what we can do.</p>
+        <p style="margin:0;text-wrap:pretty">We show up, do the work right and treat every place like it belongs to someone we know.</p>
       </div>
     </div>
   </section>
@@ -194,7 +194,7 @@ a:hover{color:var(--color-accent-800)}
     <div style="max-width:1200px;margin:0 auto;padding:48px 24px 16px;display:flex;flex-direction:column;gap:10px">
       <span style="font-family:var(--font-body);font-weight:300;letter-spacing:.4em;font-size:15px;text-transform:uppercase;color:#fddf5f">Get in touch</span>
       <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);margin:0;text-transform:uppercase;line-height:.95;color:#fff">Contact us</h1>
-      <p style="font-size:17px;max-width:640px;margin:0;color:#fddf5f;text-wrap:pretty">Richard &amp; Marquita Rogers run every job themselves. Text is the fastest way to reach us. You can also call, stop by or fill out the form and we'll get back to you.</p>
+      <p style="font-size:17px;max-width:640px;margin:0;color:#fddf5f;text-wrap:pretty">Richard &amp; Marquita Rogers run every job themselves. Text is the fastest way to reach us. You can also call or fill out the form and we'll get back to you.</p>
     </div>
   </div>
   <svg viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:clamp(60px,9vw,130px)"><path d="M0,0 H1440 V80 C1180,160 960,40 720,96 C470,150 230,150 0,96 Z" fill="#fddf5f"></path><path d="M0,0 H1440 V24 C1180,108 960,-6 720,52 C470,108 230,112 0,52 Z" fill="#04306b"></path></svg>
@@ -386,6 +386,9 @@ const PHONE = '+12292019888';
 const CATS = { land: 'Lawn & land', repair: 'Repairs & remodel', paint: 'Painting' };
 const P = (f, label, pos) => ({ src: U + f + '.jpeg', label, pos: pos || '50% 50%' });
 const JOBS = [
+  { id: 'featurewall', title: 'TV & fireplace feature wall', cat: 'repair', date: 'Nov 2026',
+    summary: 'Built a custom wood frame that sets the TV in a recessed niche above a linear electric fireplace, then hung drywall over it.',
+    photos: [P('IMG_20261113_144054262_HDR', 'Drywall hung'), P('feature-wall-installed', 'Frame installed'), P('feature-wall-frame', 'Frame built'), P('feature-wall-frame-flat', 'Framing started'), P('feature-wall-room', 'Room view'), P('feature-wall-side', 'Detail')] },
   { id: 'steps', title: 'Church entrance steps & handrails', cat: 'repair', date: 'Aug 2026',
     summary: 'Repaired and repainted the block entry steps of a local church and installed new handrails on both sides so members can come and go safely.',
     photos: [P('IMG_20260816_134316456_HDR', 'After'), P('IMG_20260816_134326062_HDR', 'Before'), P('IMG_20260816_134335047_HDR', 'After')] },
